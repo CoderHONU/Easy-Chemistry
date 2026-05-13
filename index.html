@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master Chemistry with Easy Chemistry by S.P. Sir - Expert tuition for Class 9-12, NEET, JEE with visual learning & concept building">
+    <title>Easy Chemistry by S.P. Sir | Master Chemistry Visually</title>
+    
+    <!-- Favicon & SEO -->
+    <link rel="icon" type="image/svg+xml" href="static/images/beaker.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-container">
+            <div class="beaker-container">
+                <svg class="beaker" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="liquidGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#00d4ff"/>
+                            <stop offset="50%" stop-color="#0099cc"/>
+                            <stop offset="100%" stop-color="#006699"/>
+                        </linearGradient>
+                    </defs>
+                    <path class="beaker-outline" d="M20 20 Q10 50 20 80 L30 260 Q40 280 60 280 L140 280 Q160 280 170 260 L180 80 Q190 50 180 20 Z"/>
+                    <path class="liquid-level" d="M25 80 L175 80 L170 260 Q160 270 150 270 L50 270 Q40 270 30 260 Z"/>
+                    <circle class="bubble" cx="50" cy="200" r="3">
+                        <animate attributeName="cy" values="220;180;220" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle class="bubble" cx="120" cy="180" r="2">
+                        <animate attributeName="cy" values="200;160;200" dur="4s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+                <div class="h2o-text">H₂O</div>
+            </div>
+            <p class="loading-text">Initializing Chemistry...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content">
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40">
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="#00d4ff" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="10" fill="#00d4ff"/>
+                        <circle cx="28" cy="12" r="2" fill="white"/>
+                        <circle cx="12" cy="28" r="2" fill="white"/>
+                    </svg>
+                    <span>Easy Chemistry</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Results</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <canvas id="particle-canvas" class="particle-bg"></canvas>
+                <div class="floating-atoms">
+                    <div class="atom atom-1"></div>
+                    <div class="atom atom-2"></div>
+                    <div class="atom atom-3"></div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title typing-animation">
+                        <span class="char">M</span><span class="char">a</span><span class="char">s</span><span class="char">t</span><span class="char">e</span><span class="char">r</span>
+                        <span class="char"> </span><span class="char">C</span><span class="char">h</span><span class="char">e</span><span class="char">m</span><span class="char">i</span><span class="char">s</span><span class="char">t</span><span class="char">r</span><span class="char">y</span>
+                        <span class="char"> </span><span class="char">t</span><span class="char">h</span><span class="char">e</span>
+                        <span class="char"> </span><span class="char">E</span><span class="char">a</span><span class="char">s</span><span class="char">y</span>
+                        <span class="char"> </span><span class="char">W</span><span class="char">a</span><span class="char">y</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Transform complex chemistry concepts into simple visual understanding. 
+                        Learn with S.P. Sir's proven methodology trusted by thousands of students.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="cta-primary">Join Classes Now</a>
+                        <a href="https://wa.me/919475962996" class="cta-secondary" target="_blank">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="molecule-orbit">
+                        <div class="nucleus"></div>
+                        <div class="electron-orbit orbit-1">
+                            <div class="electron e1"></div>
+                        </div>
+                        <div class="electron-orbit orbit-2">
+                            <div class="electron e2"></div>
+                        </div>
+                        <div class="electron-orbit orbit-3">
+                            <div class="electron e3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Meet S.P. Sir</h2>
+                <div class="about-grid">
+                    <div class="about-image">
+                        <div class="profile-card">
+                            <div class="profile-image">
+                                <img src="static/images/sp-sir.jpg" alt="S.P. Sir" loading="lazy">
+                            </div>
+                            <div class="profile-overlay">
+                                <h3>S.P. Sir</h3>
+                                <p>Chemistry Maestro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <p class="about-lead">
+                            With over 15 years of teaching excellence, S.P. Sir has transformed the way 
+                            students approach chemistry through his unique visual learning methodology.
+                        </p>
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <div class="stat-number" data-target="15000">0</div>
+                                <div class="stat-label">Students Trained</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-target="98">0</div>
+                                <div class="stat-label">% Success Rate</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-target="15">0</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                        <p class="about-philosophy">
+                            "Chemistry is not memorization, it's visualization." - S.P. Sir
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="courses">
+            <div class="container">
+                <h2 class="section-title">Our Chemistry Programs</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon">📚</div>
+                        <h3>Class 9-12 Chemistry</h3>
+                        <p>Complete CBSE/ICSE curriculum with foundation building</p>
+                        <ul>
+                            <li>Concept clarity</li>
+                            <li>Board exam focus</li>
+                            <li>Regular assessments</li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">⚕️</div>
+                        <h3>NEET Chemistry</h3>
+                        <p>Targeted preparation for medical entrance success</p>
+                        <ul>
+                            <li>High-weightage topics</li>
+                            <li>Previous year analysis</li>
+                            <li>Mock tests</li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">🔬</div>
+                        <h3>JEE Chemistry</h3>
+                        <p>Advanced problem-solving for engineering aspirants</p>
+                        <ul>
+                            <li>Advanced concepts</li>
+                            <li>Tricky questions</li>
+                            <li>Time management</li>
+                        </ul>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">🎯</div>
+                        <h3>Board Exam Crash Course</h3>
+                        <p>Intensive revision for 95%+ scores</p>
+                        <ul>
+                            <li>Quick revision notes</li>
+                            <li>Important questions</li>
+                            <li>Exam strategy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get Started Today</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <a href="https://wa.me/919475962996" class="whatsapp-btn" target="_blank">
+                                WhatsApp Chat
+                            </a>
+                            <p>+91 9475962996</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <p>Call: +91 9475962996</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <p>surajitpandit369@gmail.com</p>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <select name="course" required>
+                                <option value="">Select Course</option>
+                                <option>Class 9-10</option>
+                                <option>Class 11-12</option>
+                                <option>NEET</option>
+                                <option>JEE</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="cta-primary full-width">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <svg class="logo-icon" viewBox="0 0 40 40">
+                                <circle cx="20" cy="20" r="18" fill="none" stroke="#00d4ff" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="10" fill="#00d4ff"/>
+                                <circle cx="28" cy="12" r="2" fill="white"/>
+                                <circle cx="12" cy="28" r="2" fill="white"/>
+                            </svg>
+                            Easy Chemistry
+                        </div>
+                        <p>Master Chemistry Visually with S.P. Sir</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#courses">Courses</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/surajit_chem/" aria-label="Instagram" target="_blank" rel="noopener">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Easy Chemistry by S.P. Sir. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Periodic Table Modal -->
+    <div id="periodicTableModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Interactive Periodic Table</h3>
+            <div id="periodic-table">
+                <!-- Simplified periodic table will be generated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/particles.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>
