@@ -1,7 +1,21 @@
 // ==========================================================================
 // Global Variables & Initialization
 // ==========================================================================
+// ==========================================================================
+// Global Variables & Initialization
+// ==========================================================================
 document.addEventListener('DOMContentLoaded', function() {
+    // 🚀 FIX: ALWAYS START AT HOME PAGE
+    setTimeout(() => {
+        if (window.location.hash || window.scrollY > 0) {
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }
+        document.getElementById('home').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }, 500); // Wait for loading screen
+    
     initGSAP();
     initNavbar();
     initLoadingScreen();
