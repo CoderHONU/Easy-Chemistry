@@ -213,23 +213,95 @@ function initTypingAnimation() {
 // ==========================================================================
 // Contact Form
 // ==========================================================================
+// ==========================================================================
+// ==========================================================================
+// Contact Form - CLEAN PERFECT WHATSAPP
+// ==========================================================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        const formData = new FormData(form);
-        const formValues = Object.fromEntries(formData.entries());
+        
+        const nameField = form.querySelector('input[placeholder="Your Name"]');
+        const phoneField = form.querySelector('input[placeholder="Phone Number"]');
+        const emailField = form.querySelector('input[placeholder="Email (Optional)"]');
+        const courseField = form.querySelector('select');
+        
+        const name = nameField.value.trim();
+        const phone = phoneField.value.trim();
+        const email = emailField.value.trim();
+        const course = courseField.options[courseField.selectedIndex].text;
+        
+        if (!name || !phone || !course || course === 'Select Course') {
+            gsap.to([nameField, phoneField, courseField], {
+                x: 10, duration: 0.1, yoyo: true, repeat: 3, ease: 'power2.inOut'
+            });
+            alert('⚠️ Please fill all required fields');
+            return;
+        }
+        
+        const cleanPhone = phone.replace(/[^0-9]/g, '');
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (!phoneRegex.test(cleanPhone)) {
+            alert('⚠️ Enter valid 10-digit phone');
+            phoneField.focus();
+            return;
+        }
+        
+        // CLEAN WhatsApp Message - Perfect alignment, no asterisks
+        const message = `NEW STUDENT INQUIRY - Easy Chemistry by S.P. Sir\n\n` +
+                       `Name     : ${name}\n` +
+                       `Phone    : +91 ${phone}\n` +
+                       `Email    : ${email || 'Not provided'}\n` +
+                       `Course   : ${course}\n\n` +
+                       `Status   : Ready to join!\n` +
+                       `Time     : ${new Date().toLocaleString('en-IN', { 
+                           timeZone: 'Asia/Kolkata',
+                           weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',
+                           hour: '2-digit', minute: '2-digit', hour12: true
+                       })}\n\n` +
+                       `--- Please reply to confirm ---`;
+        
         const whatsappNumber = '919475962996';
-        const message = `Hello! I would like to inquire about Easy Chemistry.\n\nName: ${formValues.name || 'N/A'}\nPhone: ${formValues.phone || 'N/A'}\nEmail: ${formValues.email || 'N/A'}\nCourse: ${formValues.course || 'N/A'}`;
-
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
-        alert('Opening WhatsApp to send your inquiry. Thank you!');
-        form.reset();
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        
+        gsap.to(form.querySelector('button[type="submit"]'), {
+            scale: 0.95, duration: 0.1, yoyo: true, repeat: 1
+        });
+        
+        window.open(whatsappURL, '_blank');
+        
+        gsap.to(form, {
+            scale: 0.95, duration: 0.2, yoyo: true, repeat: 1,
+            onComplete: () => {
+                form.reset();
+                
+                const successMsg = document.createElement('div');
+                successMsg.innerHTML = '✅ Sent Successfully!';
+                successMsg.style.cssText = `
+                    position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#00d4ff,#0099cc);
+                    color:white;padding:15px 25px;border-radius:12px;box-shadow:0 8px 25px rgba(0,212,255,0.3);
+                    font-weight:600;z-index:10000;max-width:220px;text-align:center;transform:scale(0);
+                `;
+                document.body.appendChild(successMsg);
+                
+                gsap.fromTo(successMsg, {scale:0,y:30,opacity:0}, {scale:1,y:0,opacity:1,duration:0.4,ease:'back.out(1.7)'});
+                setTimeout(() => gsap.to(successMsg, {scale:0,opacity:0,duration:0.3,onComplete:()=>successMsg.remove()}), 2500);
+            }
+        });
     });
+    
+    const phoneField = form.querySelector('input[placeholder="Phone Number"]');
+    phoneField.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '').slice(0, 10);
+        e.target.value = value;
+    });
+    
+    form.querySelector('input[placeholder="Your Name"]').focus();
 }
+
 
 // ==========================================================================
 // Theme Toggle
