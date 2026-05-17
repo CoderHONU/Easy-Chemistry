@@ -36,6 +36,12 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
+html { scroll-behavior: smooth !important; }
+body { scroll-snap-type: y proximity; }
+#home { scroll-snap-align: start !important; }
+:target { scroll-margin-top: 120px; }
+.navbar.scrolled { scroll-margin-top: 80px; }
+#home:target { scroll-top: 0 !important; }
 
 .container {
     max-width: 1200px;
