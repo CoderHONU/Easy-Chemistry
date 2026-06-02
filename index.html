@@ -17,20 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <link rel="stylesheet" href="static/css/style.css">
-    <style>
-        /* Desktop: hide login items duplicated inside nav-menu */
-        @media (min-width: 769px) {
-            .nav-menu li:nth-last-child(-n+2) { display: none; }
-        }
-        /* Mobile: hide the desktop-only buttons */
-        @media (max-width: 768px) {
-            .desktop-only { display: none !important; }
-            .navbar { position: relative !important; }
-            .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-            .nav-toggle.open span:nth-child(2) { opacity: 0; }
-            .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Loading Screen -->
@@ -76,7 +63,7 @@
                     </svg>
                     <span>Easy Chemistry</span>
                 </div>
-                <ul class="nav-menu" id="navMenu">
+                <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#courses">Courses</a></li>
@@ -84,21 +71,19 @@
                     <li><a href="#testimonials">Results</a></li>
                     <li><a href="#notices">Notices</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="login.html" style="padding:9px 18px;background:linear-gradient(135deg,#00d4ff,#007acc);border-radius:10px;color:#fff !important;font-weight:700;">Student Login</a></li>
-                    <li><a href="admin.html" style="padding:9px 18px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:10px;color:#0a0e1a !important;font-weight:700;">⚙️ Admin</a></li>
+                    <li class="nav-login-item"><a href="login.html">Student Login</a></li>
+                    <li class="nav-admin-item"><a href="admin.html">⚙️ Admin</a></li>
                 </ul>
-                <div class="nav-right" style="display:flex;align-items:center;gap:12px;">
-                    <a href="login.html" class="desktop-only" style="padding:9px 18px;background:linear-gradient(135deg,#00d4ff,#007acc);border-radius:10px;color:#fff;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;">Student Login</a>
-                    <a href="admin.html" class="desktop-only" style="padding:9px 18px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:10px;color:#0a0e1a;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;">⚙️ Admin</a>
-                    <button class="theme-toggle" id="themeToggle">
-                        <span class="sun">☀️</span>
-                        <span class="moon">🌙</span>
-                    </button>
-                    <div class="nav-toggle" id="navToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                <a href="login.html" class="nav-btn-student">Student Login</a>
+                <a href="admin.html" class="nav-btn-admin">⚙️ Admin</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </nav>
@@ -526,29 +511,6 @@
         }
     })();
 </script>
-<script>
-    // Hamburger toggle
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('open');
-        });
-        navMenu.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('open');
-            }
-        });
-    }
-</script>
+
 </body>
 </html>
