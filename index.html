@@ -7,7 +7,7 @@
     <title>Easy Chemistry by S.P. Sir | Master Chemistry Visually</title>
     
     <!-- Favicon & SEO -->
-    <link rel="icon" type="image/svg+xml" href="/static/images/beaker.svg">
+    <link rel="icon" type="image/svg+xml" href="static/images/beaker.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -68,6 +68,7 @@
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#testimonials">Results</a></li>
+                    <li><a href="#notices">Notices</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-toggle">
@@ -75,6 +76,8 @@
                     <span></span>
                     <span></span>
                 </div>
+                <a href="login.html" style="padding:9px 18px;background:linear-gradient(135deg,#00d4ff,#007acc);border-radius:10px;color:#fff;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,212,255,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Student Login</a>
+                <a href="admin.html" style="padding:9px 18px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:10px;color:#0a0e1a;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(245,158,11,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">⚙️ Admin</a>
                 <button class="theme-toggle" id="themeToggle">
                     <span class="sun">☀️</span>
                     <span class="moon">🌙</span>
@@ -107,7 +110,7 @@
                     </p>
                     <div class="hero-cta">
                         <a href="#contact" class="cta-primary">Join Classes Now</a>
-                        <a href="https://wa.me/919999999999" class="cta-secondary" target="_blank">Contact on WhatsApp</a>
+                        <a href="https://wa.me/919475962996" class="cta-secondary" target="_blank">Contact on WhatsApp</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -135,7 +138,7 @@
                     <div class="about-image">
                         <div class="profile-card">
                             <div class="profile-image">
-                                <img src="/static/images/sp-sir.jpg" alt="S.P. Sir" loading="lazy">
+                                <img src="static/images/sp-sir.jpg" alt="S.P. Sir" loading="lazy">
                             </div>
                             <div class="profile-overlay">
                                 <h3>S.P. Sir</h3>
@@ -226,75 +229,132 @@
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">🧠</div>
-                        <h3>Visual Explanations</h3>
-                        <p>Complex reactions simplified through animations and 3D models</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📝</div>
-                        <h3>Smart Notes</h3>
-                        <p>Handwritten notes with memory tricks and shortcuts</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">❓</div>
-                        <h3>24/7 Doubt Solving</h3>
-                        <p>Instant doubt clearance through WhatsApp and live sessions</p>
+                        <div>
+                            <h3>Visual Learning</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">Complex reactions and molecular structures explained through diagrams, animations, and real-world examples that stick in memory.</p>
+                        </div>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📊</div>
-                        <h3>Weekly Tests</h3>
-                        <p>Progress tracking with detailed performance analysis</p>
+                        <div>
+                            <h3>Concept-First Approach</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">No rote memorization. S.P. Sir builds deep understanding from the ground up, making even the hardest topics feel intuitive.</p>
+                        </div>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🎬</div>
-                        <h3>Concept Videos</h3>
-                        <p>Watch and rewind anytime, anywhere learning</p>
+                        <div class="feature-icon">🎯</div>
+                        <div>
+                            <h3>Exam-Focused Practice</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">Regular mock tests, previous year analysis, and targeted revision sessions to maximize your score on boards, NEET &amp; JEE.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <div>
+                            <h3>Doubt Clearing Sessions</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">No doubt goes unanswered. Dedicated sessions ensure every student gets personal attention and clarity before moving on.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <div>
+                            <h3>WhatsApp Support</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">Direct WhatsApp access to S.P. Sir for quick queries, study materials, schedule updates, and exam tips anytime.</p>
+                        </div>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🏆</div>
-                        <h3>Exam Strategies</h3>
-                        <p>Proven techniques for maximum marks in minimum time</p>
+                        <div>
+                            <h3>Proven Track Record</h3>
+                            <p style="color:var(--text-secondary);line-height:1.7;">15,000+ students trained with 98% success rate. Dozens of toppers from Sikkim and neighbouring states every year.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="testimonials">
+        <section id="testimonials" style="padding:100px 0;background:var(--bg-primary);">
             <div class="container">
-                <h2 class="section-title">Student Success Stories</h2>
+                <h2 class="section-title">Student Results &amp; Reviews</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <p>"S.P. Sir's visual teaching made organic chemistry my favorite subject. Scored 98/100 in boards!"</p>
+                        <p>"S.P. Sir's visual approach changed everything for me. I went from failing chemistry to scoring 94% in boards. The way he explains organic reactions is simply unmatched."</p>
                         <div class="testimonial-author">
                             <div class="author-avatar"></div>
                             <div>
-                                <h4>Ananya Sharma</h4>
-                                <span>CBSE Class 12 - 98.5%</span>
+                                <h4>Priya Sharma</h4>
+                                <span>Class 12 Board — 94%</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <p>"NEET Chemistry AIR 247! Sir's doubt solving sessions were game-changers."</p>
+                        <p>"Cleared NEET on my first attempt with 680+ marks in chemistry alone. Sir's concept clarity and mock test strategy made the difference. Forever grateful!"</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"></div>
+                            <div class="author-avatar" style="background:linear-gradient(135deg,#00d4a0,#007acc);"></div>
                             <div>
-                                <h4>Rahul Verma</h4>
-                                <span>NEET 2024 - AIR 247</span>
+                                <h4>Rohan Gurung</h4>
+                                <span>NEET Qualifier — 680+ Chemistry</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <p>"From 65% to 96% in JEE Mains Chemistry. The smart notes were gold!"</p>
+                        <p>"JEE Advanced chemistry used to terrify me. S.P. Sir's problem-solving sessions and tricky question banks prepared me perfectly. Got into IIT Kharagpur!"</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"></div>
+                            <div class="author-avatar" style="background:linear-gradient(135deg,#ffd700,#ff8c00);"></div>
                             <div>
-                                <h4>Priya Singh</h4>
-                                <span>JEE Mains 2024 - 96%</span>
+                                <h4>Anika Rai</h4>
+                                <span>JEE Advanced — IIT Kharagpur</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"The doubt-clearing sessions are gold. No question is too small for Sir. I always left class with 100% clarity, which shows in my marks — 96% in Class 12!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a52);"></div>
+                            <div>
+                                <h4>Siddharth Limboo</h4>
+                                <span>Class 12 Board — 96%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Sir's notes are concise yet complete. I studied from them exclusively for my board crash course and scored 91%. The WhatsApp support was a lifesaver during exam week."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);"></div>
+                            <div>
+                                <h4>Kritika Thapa</h4>
+                                <span>Class 12 Board — 91%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Best chemistry teacher in Sikkim, hands down. My younger sibling also joined after seeing my results. The visual memory tricks Sir teaches are unlike anything in textbooks."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:linear-gradient(135deg,#34d399,#059669);"></div>
+                            <div>
+                                <h4>Bishal Pradhan</h4>
+                                <span>NEET Qualifier — 2nd Attempt</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notices Section -->
+        <section id="notices" style="padding:80px 0;background:var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">📢 Notices from S.P. Sir</h2>
+                <div id="notices-list" style="max-width:720px;margin:0 auto;margin-top:2rem;" id="notices-list">
+                    <div id="notices-container">
+                        <!-- notices load here -->
                     </div>
                 </div>
             </div>
@@ -322,24 +382,16 @@
                             <p>surajitpandit369@gmail.com</p>
                         </div>
                     </div>
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="e25e3ea4-1dba-4233-8467-3fc6165eba8d">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email (Optional)">
-                        </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Select Course</option>
-                                <option>Class 9-10</option>
-                                <option>Class 11-12</option>
-                                <option>NEET</option>
-                                <option>JEE</option>
-                            </select>
+                            <textarea name="message" placeholder="Tell us about your course interest or questions" required></textarea>
                         </div>
                         <button type="submit" class="cta-primary full-width">Send Inquiry</button>
                     </form>
@@ -375,13 +427,11 @@
                     <div class="footer-social">
                         <h4>Connect</h4>
                         <div class="social-links">
-                            
-                             <a href="https://www.instagram.com/surajit_chem/" aria-label="Instagram" target="_blank" rel="noopener">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-    </a>
-                            
+                            <a href="https://www.instagram.com/surajit_chem/" aria-label="Instagram" target="_blank" rel="noopener">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -403,7 +453,60 @@
         </div>
     </div>
 
-    <script src="/static/js/particles.js"></script>
-    <script src="/static/js/main.js"></script>
+    <script src="static/js/particles.js"></script>
+    <script src="static/js/main.js"></script>
+    <script>
+    (function() {
+        const SUPABASE_URL = 'https://rzdhgmdogmhenejemgsc.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6ZGhnbWRvZ21oZW5lamVtZ3NjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAxNDgyMTAsImV4cCI6MjA5NTcyNDIxMH0.jhbFzMYKo45hLLf35q6tn2QXefJPQvEE-8KVXTeU7Yo';
+
+        const catEmoji = { general:'📢', exam:'📝', holiday:'🎉', fee:'💳', result:'🏆', urgent:'🚨' };
+
+        fetch(
+            SUPABASE_URL + '/rest/v1/notices?select=*&order=created_at.desc&limit=5',
+            {
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': 'Bearer ' + SUPABASE_KEY
+                }
+            }
+        )
+        .then(r => r.json())
+        .then(notices => {
+            const el = document.getElementById('notices-container');
+            if (!el) return;
+
+            if (!notices || notices.length === 0) {
+                el.innerHTML = renderNotice({ title: 'Welcome to Easy Chemistry!', body: 'New batch starting soon. Register now to secure your seat. Contact on WhatsApp for details.', is_new: true, created_at: null, category: 'general' });
+                return;
+            }
+
+            el.innerHTML = notices.map(n => renderNotice(n)).join('');
+        })
+        .catch(() => {
+            const el = document.getElementById('notices-container');
+            if (el) el.innerHTML = renderNotice({ title: 'Welcome to Easy Chemistry!', body: 'New batch starting soon. Contact on WhatsApp for details.', is_new: true, created_at: null, category: 'general' });
+        });
+
+        function renderNotice(n) {
+            const emoji = catEmoji[n.category] || '📢';
+            const date = n.created_at
+                ? new Date(n.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
+                : '';
+            return '<div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.07);">' +
+                '<div style="width:8px;height:8px;border-radius:50%;background:' + (n.is_new ? '#00d4ff' : '#6b7a99') + ';flex-shrink:0;margin-top:6px;' + (n.is_new ? 'box-shadow:0 0 8px rgba(0,212,255,0.5);' : '') + '"></div>' +
+                '<div style="flex:1;">' +
+                    '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">' +
+                        '<span>' + emoji + '</span>' +
+                        '<span style="font-weight:700;">' + n.title + '</span>' +
+                        (n.is_new ? '<span style="background:rgba(0,212,255,0.12);color:#00d4ff;font-size:0.65rem;font-weight:700;padding:2px 8px;border-radius:20px;border:1px solid rgba(0,212,255,0.25);">NEW</span>' : '') +
+                    '</div>' +
+                    '<div style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">' + n.body + '</div>' +
+                    (date ? '<div style="font-size:0.75rem;color:#6b7a99;margin-top:6px;">' + date + '</div>' : '') +
+                '</div>' +
+            '</div>';
+        }
+    })();
+</script>
 </body>
 </html>
