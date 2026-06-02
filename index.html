@@ -17,6 +17,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        /* ── Mobile Navbar Fix ── */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 32px;
+        }
+        /* Ensure navbar is position:relative for dropdown anchoring */
+        .navbar { position: relative; }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+        /* Hide mobile-only buttons in desktop menu */
+        .nav-mobile-btn { display: none !important; }
+
+        @media (max-width: 768px) {
+            /* Hide desktop login buttons on mobile */
+            .nav-desktop-btn { display: none !important; }
+
+            /* Show login buttons inside the hamburger menu */
+            .nav-mobile-btn { display: list-item !important; margin-top: 6px; }
+
+            /* Keep hamburger toggle right-aligned and vertically centered */
+            .nav-actions {
+                margin-left: auto;
+                gap: 6px;
+            }
+            .nav-toggle {
+                display: flex !important;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                cursor: pointer;
+                padding: 4px;
+                flex-shrink: 0;
+            }
+            .nav-toggle span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: #fff;
+                border-radius: 2px;
+                transition: all 0.3s;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -70,18 +120,22 @@
                     <li><a href="#testimonials">Results</a></li>
                     <li><a href="#notices">Notices</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li class="nav-mobile-btn"><a href="login.html" style="display:block;padding:10px 18px;background:linear-gradient(135deg,#00d4ff,#007acc);border-radius:10px;color:#fff;text-decoration:none;font-size:0.9rem;font-weight:700;text-align:center;">Student Login</a></li>
+                    <li class="nav-mobile-btn"><a href="admin.html" style="display:block;padding:10px 18px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:10px;color:#0a0e1a;text-decoration:none;font-size:0.9rem;font-weight:700;text-align:center;">⚙️ Admin</a></li>
                 </ul>
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="nav-actions" style="display:flex;align-items:center;gap:10px;margin-left:auto;">
+                    <a href="login.html" class="nav-desktop-btn" style="padding:9px 18px;background:linear-gradient(135deg,#00d4ff,#007acc);border-radius:10px;color:#fff;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,212,255,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Student Login</a>
+                    <a href="admin.html" class="nav-desktop-btn" style="padding:9px 18px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:10px;color:#0a0e1a;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(245,158,11,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">⚙️ Admin</a>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </button>
+                    <div class="nav-toggle" id="navToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-                <a href="login.html" style="padding:9px 18px;background:linear-gradient(135deg,#00d4ff,#007acc);border-radius:10px;color:#fff;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,212,255,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Student Login</a>
-                <a href="admin.html" style="padding:9px 18px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:10px;color:#0a0e1a;text-decoration:none;font-size:0.85rem;font-weight:700;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(245,158,11,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">⚙️ Admin</a>
-                <button class="theme-toggle" id="themeToggle">
-                    <span class="sun">☀️</span>
-                    <span class="moon">🌙</span>
-                </button>
             </div>
         </nav>
 
@@ -507,6 +561,54 @@
             '</div>';
         }
     })();
+
+    // ── Hamburger Menu Toggle ──
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('open');
+        });
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('open');
+            });
+        });
+    }
 </script>
+
+<style>
+    /* Nav menu open state on mobile */
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none !important;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--nav-bg, #0a0e1a);
+            padding: 16px 20px 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            z-index: 999;
+            gap: 4px;
+        }
+        .nav-menu.active {
+            display: flex !important;
+        }
+        .nav-menu li a {
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        /* Animate hamburger to X when open */
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+</style>
 </body>
 </html>
